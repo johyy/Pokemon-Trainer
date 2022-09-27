@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StorageKeys } from 'src/enums/storage-keys.enum';
 import { StorageUtil } from 'src/utils/storage.util';
-import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
 
 @Injectable({
@@ -30,11 +29,23 @@ export class TrainerService {
 
   public inCatched(pokemonName: string): boolean {
     if (this._trainer) {
-      //console.log(this.trainer?.pokemon.includes(pokemonName))
       if(!this.trainer?.pokemon.includes(pokemonName)){
         return false;
       }
     }
     return true; 
   }
+
+  public addToCatched(pokemonName: string): void {
+    if (this._trainer) {
+      this._trainer.pokemon.push(pokemonName);
+    }
+  }
+
+  public removeFromCatched(pokemonName: string): void {
+    if (this._trainer) {
+      this._trainer.pokemon = this._trainer.pokemon.filter((pokemon: string) => pokemon !== pokemonName)
+    }
+  }
+
 }

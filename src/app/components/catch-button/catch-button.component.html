@@ -1,6 +1,11 @@
 <aside class="absolute top-2 right-2">
     <button
         (click)="onCatchClick()">
-        <span><img src="../assets/images/pokeballEmpty.png" alt="Empty" width="25"/></span>
+
+        <span *ngIf="isCatched; then catched else notCatched"></span>
+
+        <ng-template #catched><img src="../assets/images/pokeballFull.png" alt="Full" width="25"></ng-template>
+        <ng-template #notCatched><img src="../assets/images/pokeballEmpty.png" alt="Empty" width="25"/></ng-template>
+        
     </button>
 </aside>
