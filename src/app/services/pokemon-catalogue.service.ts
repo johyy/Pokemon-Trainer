@@ -15,6 +15,7 @@ export class PokemonCatalogueService {
   private _pokemons: Pokemon[] = [];
   private _error: string = "";
   private _loading: boolean = false;
+  private _apiDone = false;
 
   constructor(private readonly http: HttpClient ) { }
 
@@ -30,31 +31,30 @@ export class PokemonCatalogueService {
     return this._loading;
   }
 
-
-  //tämä kusee hyvä mies
   public findAllPokemons(): void{
-    this._loading = true;
-    this.getListOfPokemon()
-    .pipe(
-      finalize(() => {
-        this._loading = false;
-      })
-    )
-    .subscribe(
-      (results: Pokemon[]) => {
-        for(let r of results) {
-          this.pokemons.push(r)
-        }
-      }
-    )
-  }
-
-  private getListOfPokemon() {
-    return this.http.get<PokemonAPI>(apiPokemon)
+    if(!this._apiDone){
+      this._loading = true;
+      this.http.get<PokemonAPI>(apiPokemon)
       .pipe(
         map((response: PokemonAPI) => response.results)
-      );
+      )
+      .pipe(
+        finalize(() => {
+          this._loading = false;
+        })
+      )
+      .subscribe(
+        (results: Pokemon[]) => {
+          for(let r of results) {
+            this.pokemons.push(r)
+          }
+        }
+      ),{
+        error: (error: HttpErrorResponse) => {
+        }
+      }
+    }
+    this._apiDone = true;
   }
-
 
   };
