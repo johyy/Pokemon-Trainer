@@ -1,6 +1,8 @@
-<li *ngIf="pokemon">
+<ul *ngIf="pokemon" class="mb-3 w-max inline-table bg-pokemon-white-500 px-7 m-2 rounded-xl">
     <section>
-        <img [src]="getPokemonSprite()" [alt]="pokemon.name" />
-        <span>Name: {{ pokemon.name }} </span>
+        <img [src]="getPokemonSprite()" [alt]="pokemon.name" class="block w-max"/>
     </section>
-</li>
+    <section class="p-3">
+        <span class="text-xl text-pokemon-red-500 align-center font-mono font-semibold">{{ pokemon.name }} </span>
+    </section>
+</ul>
