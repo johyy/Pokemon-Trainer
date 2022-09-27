@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-trainer',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerPage implements OnInit {
 
-  constructor() { }
+  constructor(private readonly trainerService: TrainerService) { }
 
   ngOnInit(): void {
+  }
+
+  logout(): void {
+    const trainer = this.trainerService.trainer;
+    if(trainer != undefined)
+      this.trainerService.deleteTrainer(trainer);
+      window.location.reload();
   }
 
 }
