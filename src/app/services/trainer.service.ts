@@ -19,6 +19,10 @@ export class TrainerService {
     this._trainer = trainer;
   }
 
+  deleteTrainer(trainer: Trainer){
+    StorageUtil.storageRemove<Trainer>(StorageKeys.Trainer);
+  }
+
   constructor() {
     this._trainer = StorageUtil.storageRead<Trainer>(StorageKeys.Trainer);
    }

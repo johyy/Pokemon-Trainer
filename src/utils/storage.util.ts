@@ -18,4 +18,8 @@ export class StorageUtil {
             return undefined;
         }
     }
+
+    public static storageRemove<T>(key:string): void {
+        sessionStorage.removeItem(key);
+    }
 }
