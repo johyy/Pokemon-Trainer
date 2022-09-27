@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { PokemonCatalogueService } from './pokemon-catalogue.service';
 import { TrainerService } from './trainer.service';
-import { Pokemon } from '../models/pokemon.model';
 import { Trainer } from '../models/trainer.model';
 import { finalize, Observable, tap } from 'rxjs';
 
@@ -30,7 +29,7 @@ export class CatchService {
     if (!this.trainerService.trainer) {
       throw new Error("addToCatched: There is no trainer");
     }
-
+    
     const trainer: Trainer = this.trainerService.trainer;
     const pokemon: string = pokemonName;
 

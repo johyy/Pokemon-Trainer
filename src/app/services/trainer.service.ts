@@ -30,13 +30,11 @@ export class TrainerService {
 
   public inCatched(pokemonName: string): boolean {
     if (this._trainer) {
-      console.log(pokemonName)
-      console.log(this.trainer?.pokemon.find((pokemon: Pokemon) => pokemon.name === pokemonName))
-      return false; 
-      
-   
-      
+      //console.log(this.trainer?.pokemon.includes(pokemonName))
+      if(!this.trainer?.pokemon.includes(pokemonName)){
+        return false;
+      }
     }
-    return true;
+    return true; 
   }
 }
