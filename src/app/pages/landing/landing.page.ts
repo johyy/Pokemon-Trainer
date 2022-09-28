@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-landing',
@@ -14,5 +15,4 @@ export class LandingPage {
     this.router.navigateByUrl("/pokemon");
 
   }
-
 }
