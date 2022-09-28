@@ -57,9 +57,8 @@ export class PokemonCatalogueService {
     this._apiDone = true;
   }
 
-/** 
-  public pokemonByName(name: string): Pokemon | undefined {
-    return this._pokemons.find((pokemon: Pokemon) => pokemon.name === name);
+  public pokemonByName(name: string): Pokemon {
+    const pokemon = this._pokemons.find((pokemon: Pokemon) => pokemon.name === name);
+    return pokemon!
   }
-*/
 };
