@@ -9,6 +9,7 @@ import { TrainerService } from 'src/app/services/trainer.service';
   templateUrl: './trainer.page.html',
   styleUrls: ['./trainer.page.css']
 })
+
 export class TrainerPage implements OnInit {
 
   get trainer(): Trainer | undefined {
@@ -45,11 +46,5 @@ export class TrainerPage implements OnInit {
     this.pokemonService.findAllPokemons();
   }
 
-  logout(): void {
-    const trainer = this.trainerService.trainer;
-    if(trainer != undefined)
-      this.trainerService.deleteTrainer(trainer);
-      window.location.reload();
-  }
-
 }
+
