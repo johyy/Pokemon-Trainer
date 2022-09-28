@@ -6,18 +6,16 @@ import { TrainerService } from 'src/app/services/trainer.service';
   templateUrl: './trainer.page.html',
   styleUrls: ['./trainer.page.css']
 })
+
 export class TrainerPage implements OnInit {
+
+  get trainerName() : string | undefined {
+     return this.trainerService.trainer?.username;
+  } 
 
   constructor(private readonly trainerService: TrainerService) { }
 
   ngOnInit(): void {
-  }
-
-  logout(): void {
-    const trainer = this.trainerService.trainer;
-    if(trainer != undefined)
-      this.trainerService.deleteTrainer(trainer);
-      window.location.reload();
   }
 
 }
