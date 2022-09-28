@@ -1,7 +1,7 @@
 # Frontend Assigment 3 - Pokemon website
 
 This is the third frontend assignment for Java Fullstack bootcamp held by Noroff.
-The task was to create pokemon webpage with Angular. 
+The task was to create pokemon website with Angular. 
 
 ## Table of Contents
 
@@ -10,8 +10,8 @@ The task was to create pokemon webpage with Angular.
 3. [Maintainers](#maintainers)
 
 ## Background
-The assigment was to create Pokemon website with Angular. Idea is that user chooses trainer name and logs in to site.
-Then user can view Pokemons and add them to users collection. The website had to include:
+The assignment was to create Pokemon website with Angular. Idea is that user chooses trainer name and logs in to the website.
+Then user can view Pokemons and add them to the users collection. The website had to include:
 
 - Login page
 - Trainer page
@@ -21,9 +21,9 @@ Then user can view Pokemons and add them to users collection. The website had to
 
 1. Login page should be the landing page and user can't have access to two other pages without logging in.
 2. Trainer page should list all the pokemons and their images which are included in the users collection list.
-3. In trainer page user has to have option to remove pokemons from the users collection list.
+3. In trainer page user has option to remove pokemons from the users collection list.
 4. User has to have option to logout in trainer page and this must return user to login page.
-5. Pokemon catalogoue page lists all the pokemons and their images. User has to have option to add wanted pokemon to users collection.
+5. Pokemon catalogoue page lists all the pokemons and their images. User has option to add wanted pokemon to users collection.
 6. If pokemon is stored to users collection pokemon list the catalogoue page should indicate that pokemon as owned.
 
 ## Install
