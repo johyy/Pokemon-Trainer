@@ -1,8 +1,13 @@
 <header class="container mx-auto p-4 flex place-content-center">
     <h2 class="text-pokemon-white-500 text-3xl">Welcome trainer, {{ trainer?.username }}!</h2>
-    <app-logout-button></app-logout-button>
+    <app-logout-button class="absolute right-5"></app-logout-button>
 </header>
-<main class="container mx-auto p-4 flex place-content-center">
-    <h4 class="text-pokemon-white-500 text-3xl">Your catched Pokémon</h4>
+<section class="container mx-auto p-4 flex place-content-center">
+    <h4 class="text-pokemon-white-500 text-xl">Your catched Pokémon:</h4>
+</section>
+<main>
     <app-pokemon-list [pokemons]="catched"></app-pokemon-list>
 </main>
+<section class="container mx-auto p-4 flex place-content-center">
+    <h4 class="text-pokemon-white-500 text-3xl font-semibold font-style: italic">Gotta Catch 'Em All!</h4>
+</section>
