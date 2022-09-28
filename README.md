@@ -5,9 +5,9 @@ The task was to create pokemon webpage with Angular.
 
 ## Table of Contents
 
-1. Background
-2. Install
-3. Maintainers
+1. [Background](#background)
+2. [Install](#install)
+3. [Maintainers](#maintainers)
 
 ## Background
 The assigment was to create Pokemon website with Angular. Idea is that user chooses trainer name and logs in to site.
@@ -17,7 +17,7 @@ Then user can view Pokemons and add them to users collection. The website had to
 - Trainer page
 - Pokemon catalogue page
 
-### Requarements for the pages:
+### Requirements for the pages:
 
 1. Login page should be the landing page and user can't have access to two other pages without logging in.
 2. Trainer page should list all the pokemons and their images which are included in the users collection list.
